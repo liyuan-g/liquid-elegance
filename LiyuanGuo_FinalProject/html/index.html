@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Elegance</title>
+    <link href="/css/myStyle.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap" rel="stylesheet">
+</head>
+<body> 
+    <header id="header">
+        <img src="https://liyuan.neocities.org/IMG_0378.png" alt="logo" class="logo">
+        <h1>Liquid Elegance</h1>
+        <p>--A website for Cocktail lover</p>
+    </header>
+    <script>
+
+        const header = document.getElementById('header');
+
+
+window.onscroll = function() {
+    let scrollPosition = window.scrollY; 
+    let opacity = Math.min(scrollPosition / 300, 1); 
+
+   
+    header.style.backgroundColor = `rgba(122, 92, 61, ${opacity})`;
+};
+    </script>
+	<nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          
+          <ul id="menu">
+            <a href="index.html"><li>Home</li></a>
+            <a href="cla.html"><li>Classic</li></a>
+            <a href="creative.html"><li>Creative</li></a>
+            <a href="bars.html"><li>Bars Culture</li></a>
+          </ul>
+        </div>
+      </nav>
+
+    <section class="main-banner">
+        <img src="https://liyuan.neocities.org/sensonaltrending.jpg" alt="Seasonal Trending" class="banner-image">
+        <div class="text-content">
+            <div class="title" >Once Upon in Oaxaca</a></div>
+            <div class="subtitle">from HANDSHAKE SPEAKEASY, Mexico City</a> </div>
+            <div class="content">
+                <p>This cocktail is inspired by the process of making Mezcal, so they make a fire show on your table with a steel cloth. This cocktail has Mezcal, Absinthe, Mint, Whey, and some Lemon Juice. It takes 3 days to make this cocktail in their underground cocktail lab.</p>
+            </div>
+        </div>
+    </section>
+    <section class="cocktail-history">
+        <h2 class="animated-title">Cocktails Through the Ages: A Journey of Flavor and Craft</h2>
+        <p>Cocktails have a rich history that spans centuries, beginning in the early 19th century. Originally a simple mixture of spirits, sugar, water, and bitters, the cocktail was first recognized as a distinct drink in the United States in the early 1800s. Over time, this iconic beverage evolved into a wide variety of flavors, techniques, and styles. From the elegance of the Martini to the boldness of the Old Fashioned, cocktails have become an integral part of social gatherings, celebrations, and evening relaxation.</p>
+  <!-- Image Slider -->
+  <div class="history-slideshow">
+    <div class="slide active">
+        <img src="https://liyuan.neocities.org/history.jpg" alt="An illustration from The Innocents Abroad by Mark Twain, published in 1897. Between the 1860s and 1920, when Prohibition went into effect, American bartending came into its own.">
+        <div class="slide-caption">An illustration from The Innocents Abroad by Mark Twain, published in 1897. Between the 1860s and 1920, when Prohibition went into effect, American bartending came into its own.</div>
+    </div>
+    <div class="slide">
+        <img src="https://liyuan.neocities.org/historya.jpg" alt="Jerry Thomas authored the first bartender's guide in 1862. His signature drink was the Blue Blazer, a cocktail he'd light on fire and pass back and forth between two glasses to create a blazing arch.">
+        <div class="slide-caption">Jerry Thomas authored the first bartender's guide in 1862. His signature drink was the Blue Blazer, a cocktail he'd light on fire and pass back and forth between two glasses to create a blazing arch.</div>
+    </div>
+    <div class="slide">
+        <img src="https://liyuan.neocities.org/construction.jpg" alt="Cocktail Construction Chart, 1974, U.S. Forest Service. NARA ID 7035823.">
+        <div class="slide-caption">Cocktail Construction Chart, 1974, U.S. Forest Service. NARA ID 7035823.</div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Auto-switch slides every 5 seconds
+        setInterval(nextSlide, 5000);
+    });
+</script>
+
+      </section>
+      <footer class="bar-footer">
+        <p>&copy; 2024 Liquid Elegance</p>
+      </footer>     
+</body>
+</html>

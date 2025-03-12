@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Elegance</title>
+    <link href="/css/myStyle.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header id="header">
+    <a href="index.html">
+      <img src="https://liyuan.neocities.org/IMG_0378.png" alt="logo" class="logo">
+  </a>
+    <h1>Liquid Elegance</h1>
+    <p>--A website for Cocktail lover</p>
+</header>
+
+<script>
+
+  const header = document.getElementById('header');
+
+
+window.onscroll = function() {
+let scrollPosition = window.scrollY; 
+let opacity = Math.min(scrollPosition / 300, 1); 
+
+
+header.style.backgroundColor = `rgba(122, 92, 61, ${opacity})`;
+};
+</script>
+<nav role="navigation">
+  <div id="menuToggle">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <ul id="menu">
+      <a href="index.html"><li>Home</li></a>
+      <a href="cla.html"><li>Classic</li></a>
+      <a href="creative.html"><li>Creative</li></a>
+      <a href="bars.html"><li>Bars Culture</li></a>
+    </ul>
+  </div>
+</nav>
+<section class="bar-intro">
+  <h2>Bars Culture</h2>
+  <div class="image-slideshow">
+    <img src="https://liyuan.neocities.org/barp.jpg" alt="cocktail bar" title="cocktail bar">
+    <img src="https://liyuan.neocities.org/sip.jpg" alt="cocktail bar" title="cocktail bar">
+</div>
+  
+  <p class="bar-description">Bars are not just places to drink—they're cultural hubs where people gather to share stories, unwind, and celebrate. With origins dating back to the 18th century, bars have evolved into spaces where creativity thrives. The environment, the cocktails, and the people all contribute to a unique social experience that has been an integral part of human history.</p>
+</section>
+
+<section class="bar-history">
+  <h2>History of Bars</h2>
+  <img src="https://liyuan.neocities.org/seans-bar-irlanda.jpg" alt="first bar" title="first bar">
+  <p class="bar-description">The first known bars appeared in ancient civilizations, with establishments serving wine, beer, and other spirits. Over time, bars became central to social life, evolving into establishments where patrons could enjoy drinks, listen to music, and engage in lively conversations. Today, bars continue to evolve, with new trends and innovations in mixology, ambiance, and customer experience shaping their role in modern society.</p>
+</section>
+
+<section class="bar-famous">
+  <h2>Famous Bars Around the World</h2>
+  <p class="bar-description">Here are some of the most iconic and historic bars that have shaped cocktail culture:</p>
+  <table class="bar-table">
+    <thead>
+      <tr>
+        <th>Bar Name</th>
+        <th>Location</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Harry’s New York Bar</strong></td>
+        <td>Paris, France</td>
+        <td>A legendary spot for cocktails and history.</td>
+      </tr>
+      <tr>
+        <td><strong>The Dead Rabbit</strong></td>
+        <td>New York, USA</td>
+        <td>Known for its Irish-inspired drinks and vibrant atmosphere.</td>
+      </tr>
+      <tr>
+        <td><strong>La Floridita</strong></td>
+        <td>Havana, Cuba</td>
+        <td>A hotspot for Hemingway and the birthplace of the Daiquiri.</td>
+      </tr>
+      <tr>
+        <td><strong>The American Bar</strong></td>
+        <td>London, UK</td>
+        <td>One of the oldest cocktail bars, known for its traditional cocktails.</td>
+      </tr>
+      <!-- More famous bars can be added here -->
+    </tbody>
+  </table>
+  
+</section>
+
+<footer class="bar-footer">
+  <p>&copy; 2024 Liquid Elegance</p>
+</footer>
+</body>
+</html>

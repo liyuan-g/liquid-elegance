@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>liquid elegance</title>
+    <link href="/css/myStyle.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
+</head>
+<body> 
+    <header id="header">
+      <a href="index.html">
+        <img src="https://liyuan.neocities.org/IMG_0378.png" alt="logo" class="logo">
+    </a>
+        <h1>Liquid Elegance</h1>
+        <p>--A website for Cocktail lover</p>
+    </header>
+
+    <script>
+
+      const header = document.getElementById('header');
+
+
+window.onscroll = function() {
+  let scrollPosition = window.scrollY; 
+  let opacity = Math.min(scrollPosition / 300, 1); 
+
+ 
+  header.style.backgroundColor = `rgba(122, 92, 61, ${opacity})`;
+};
+  </script>
+<nav role="navigation">
+      <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        
+        <ul id="menu">
+          <a href="index.html"><li>Home</li></a>
+          <a href="cla.html"><li>Classic</li></a>
+          <a href="creative.html"><li>Creative</li></a>
+          <a href="bars.html"><li>Bars Culture</li></a>
+        </ul>
+      </div>
+    </nav>
+    <div class="cla-image-container">
+      <img src="https://liyuan.neocities.org/classic.jpg" alt="Classic Cocktails" class="cla-header-image">
+  </div>
+  <div class="cla-content">
+      <h1 class="cla-title">Classic Cocktails</h1>
+      <p class="cla-description">
+          Classic cocktails are the cornerstone of mixology, celebrated for their simplicity, balance, and enduring appeal. 
+          These iconic drinks often feature a harmonious blend of base spirits, mixers, and garnishes, 
+          showcasing the artistry of cocktail craftsmanship.
+      </p>
+  </div>
+  <div class="cla-cocktails">
+    <!-- Old Fashioned -->
+    <div class="cla-cocktail-card">
+        <img src="https://liyuan.neocities.org/oldfashioned.jpg" alt="Old Fashioned">
+        <div class="cla-cocktail-text">
+            <h3>Old Fashioned</h3>
+            <p>A timeless classic, the Old Fashioned combines whiskey, sugar, bitters, and a touch of orange zest.</p>
+        </div>
+    </div>
+
+    <!-- Negroni -->
+    <div class="cla-cocktail-card">
+        <img src="https://liyuan.neocities.org/negroni.jpg" alt="Negroni">
+        <div class="cla-cocktail-text">
+            <h3>Negroni</h3>
+            <p>The Negroni is a sophisticated blend of gin, Campari, and sweet vermouth, garnished with orange peel.</p>
+        </div>
+    </div>
+
+    <!-- Dry Martini -->
+    <div class="cla-cocktail-card">
+        <img src="https://liyuan.neocities.org/drymartini.jpg" alt="Dry Martini">
+        <div class="cla-cocktail-text">
+            <h3>Dry Martini</h3>
+            <p>A symbol of elegance, the Dry Martini features gin, dry vermouth, and a classic olive garnish.</p>
+        </div>
+    </div>
+</div>
+<footer class="bar-footer">
+  <p>&copy; 2024 Liquid Elegance</p>
+</footer>
+</body>
+</html>

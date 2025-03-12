@@ -1,0 +1,997 @@
+
+header {
+    font-family: 'Caveat', sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+    height: 50px;
+    padding: 2rem 1rem; 
+    background-color: rgb(122, 92, 61,0);
+    color: #ffffff;
+    text-align: left; 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: sticky; 
+    top: 0; 
+    width: 100%; 
+    z-index: 10; 
+    transition: opacity 0.3s ease; 
+    box-sizing: border-box;
+}
+
+header p{
+    font-family: 'Caveat', sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+}
+p{
+    font-family: 'Nunito', sans-serif;
+}
+
+.logo {
+    width: 50px; 
+    height: 50px; 
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #4d3b28;
+}
+
+a
+{
+  text-decoration: none;
+  color: #7a5c3d; 
+  
+  transition: color 0.2s ease;
+}
+
+a:hover
+{
+  color: tomato;
+}
+
+#menuToggle
+{
+  display: block;
+  position: fixed;
+  top: 20px;
+  right: 50px;
+  
+  z-index: 10;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; 
+  z-index: 2; 
+  
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #f6bf8b;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #4d3b28;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+#menu
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #f6bf8b;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translateX(120%);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: translate(0,0);
+}
+
+.main-banner {
+    position: relative;  
+    top: -80px;
+    width: 100%;
+    height: 100vh; /* 设置高度为屏幕高度 */
+    overflow: hidden;
+  }
+  
+  /* 背景图片样式 */
+  .main-banner .banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片按比例填充 */
+    z-index: -1; /* 图片在最底层 */
+  }
+  
+  /* 文本内容容器样式 */
+  .main-banner .text-content {
+    position: absolute;
+    bottom: 20px; /* 距离底部 20px */
+    left: 20px; /* 距离左侧 20px */
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+    color: white; /* 文本为白色 */
+    padding: 15px;
+    border-radius: 10px; /* 圆角背景 */
+    max-width: 400px; /* 限制文本宽度 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+  }
+  
+  /* 标题样式 */
+  .main-banner .text-content .title a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #f5f5f5;
+  }
+  
+  .main-banner .text-content .title a:hover {
+    color: #ffcc00; /* 悬停时文字变黄色 */
+  }
+  
+  /* 副标题样式 */
+  .main-banner .text-content .subtitle {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .main-banner .text-content .subtitle a {
+    color: #ffa07a;
+    text-decoration: underline;
+  }
+  
+  /* 内容文本样式 */
+  .main-banner .text-content .content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+.text-content {
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+
+
+.title {
+    color: #4d3b28;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+}
+
+.title:hover {
+    background-color: #7a5c3d;
+    color: #ffffff;
+    border-radius: 2px;
+}
+
+.subtitle{
+    font-size: 1rem;
+    color: #7a5c3d; 
+    margin: 0 0 0.5rem 0;
+    margin-top: 0.5rem;
+} 
+
+ .subtitle a {
+    color:#7a5c3d; 
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+} 
+
+.subtitle a:hover {
+    background-color: #7a5c3d;
+    color: #ffffff;
+    border-radius: 2px;
+}
+
+.content p {
+    font-size: 1rem;
+    color: #96724c; 
+    line-height: 1.6; 
+}
+
+.cocktail-history {
+    background-color: #f0f0f0;  /* Light background color */
+    padding: 2rem;              /* Adds space inside the section */
+    border-radius: 10px;        /* Smooth corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 800px;           /* Limits the width */
+    margin: 0 auto;             /* Centers the section */
+}
+
+.cocktail-history h2 {
+    font-family: 'Caveat', sans-serif;
+    font-size: 2rem;            /* Title size */
+    color: #4d3b28;             /* Dark brown color */
+    text-align: center;         /* Center aligns the title */
+    margin-bottom: 1rem;        /* Space between title and text */
+    animation: bounce 2s ease-in-out infinite; /* Apply continuous bouncing animation */
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Start at the normal position */
+    }
+    50% {
+        transform: translateY(-20px); /* Move up */
+    }
+}
+
+
+  .cocktail-history p {
+    font-size: 1.1rem;          /* Adjust text size */
+    color: #4d3b28;             /* Dark brown color */
+    line-height: 1.6;           /* Line spacing for readability */
+    text-align: justify;
+    margin-bottom: 2rem;        /* Justified text alignment */
+  }
+
+ /* Image Slider Container */
+.image-slider {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: transparent;
+    transition: color 0.3s ease;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .arrow:hover {
+    color: #4d3b28; /* Change the arrow color when hovered */
+  }
+
+  .left-arrow {
+    left: 10px;
+  }
+  
+  .right-arrow {
+    right: 10px;
+  }
+  
+  .cocktail-image {
+    display: none;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .cocktail-image img {
+    max-width: 100%;            /* Ensures the image fits within the section */
+    border-radius: 8px;         /* Slight border radius for smooth edges */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow to the images */
+  }
+  
+  .cocktail-image figcaption {
+    font-size: 1rem;            /* Smaller text size for captions */
+    color: #4d3b28;             /* Same color as the body text */
+    margin-top: 1rem;           /* Space between image and caption */
+    text-align: center;         /* Center aligns the caption */
+  }
+
+.cocktail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    max-width: 100%;
+    padding: 1rem;
+}
+
+.cocktail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #e5c9a7;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1300px; 
+}
+
+.cocktail-item img {
+    width: auto;       
+    height: 100%;     
+    border-radius: 8px;
+}
+
+.cocktail-info {
+    flex: 1;
+}
+.cocktail-info h3 {
+    margin: 0;
+    color: #4d3b28;
+}
+
+.cocktail-info p {
+    margin: 0.5rem 0;
+}
+
+.cocktail-info a {
+    color: #7a5c3d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cocktail-info a:hover {
+    color: #4d3b28;
+    text-decoration: underline;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* .gallery-item {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}  */
+
+.gallery-item img {
+        width: 400px; 
+        height: auto; 
+
+}
+
+/* hover 效果 */
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.bar-title{
+    font-size: 2rem;
+    /* font-weight: bold; */
+    color: #7a5c3d;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.6; 
+    padding-left: 120px;
+}
+
+.bar-content{
+    font-size: 1rem;
+    color: #4d3b28; 
+    line-height: 1.6; 
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.cocktail-img{
+    width: 300px;       
+    height: 400px; 
+    float:left;
+    padding-left: 120px;
+   /* padding-right: 120px; */
+    /* margin-right: 1rem; */
+    margin-right: 120px;
+}
+
+.cocktail-title{
+    font-size: 2rem;
+    /* font-weight: bold; */
+    color: #7a5c3d;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.6; 
+    padding-left: 120px;
+    /* float: center; */
+}
+
+.cocktail-content{
+    font-size: 1rem;
+    color: #4d3b28; 
+    line-height: 1.6; 
+    padding-left: 120px;
+    padding-right: 120px;
+    /* float: right; */
+}
+
+
+
+.cla-image-container {
+    width: 100%;
+    height: 50vh; /* Takes half of the viewport height */
+    overflow: hidden;
+    position: relative;
+    top: -80px;
+}
+
+.cla-header-image {
+    width: 100%;
+    height: 100%;
+  
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+}
+
+.cla-content {
+    text-align:left;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: -10em; /* Pull the content upward */
+}
+
+.cla-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 5.5em;
+    /* font-weight: bold; */
+    color: #e2c8ac;
+    margin: 0;
+    position: relative;
+    z-index: 2; /* Ensure it stays above the image */
+    border-radius: 15px;
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 50%, white 50%); */
+    display: inline-block; /* Adjust width to text content */
+    padding: 0.2em 1em;
+}
+
+.cla-description {
+    font-size: 1.2em;
+    margin-top: 1em;
+    color: #e2c8ac;
+    text-align: justify;
+    padding-left: 5em; 
+    padding-right: 2em; 
+}
+.cla-cocktails {
+    display: flex;
+    flex-direction: column; /* 卡片垂直排列 */
+    gap: 2em; /* 卡片之间的间距 */
+    align-items: center; /* 卡片居中 */
+    margin: 2em 0;
+}
+
+.cla-cocktail-card {
+    display: flex; /* 使用flex布局，让图片和文字横向排列 */
+    justify-content: flex-start; /* 图片左对齐 */
+    align-items: center; /* 文字与图片垂直居中 */
+    width: 90%;
+    max-width: 1100px; /* 设置最大宽度 */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1em;
+}
+
+.cla-cocktail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cla-cocktail-card img {
+    width: 15%; /* 调整图片大小为30% */
+    height: auto;
+    margin-right: 1em; /* 图片与文字之间的间距 */
+}
+
+.cla-cocktail-text {
+    display: flex;
+    flex-direction:column; /* 文字内容垂直排列 */
+    width: 60%; /* 文字部分占60% */
+}
+
+.cla-cocktail-card h3 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 1.8em;
+    margin: 0.5em 0;
+    color: #333;
+}
+
+.cla-cocktail-card p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.cla-cocktail-link {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    background-color: #e2c8ac;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
+.cla-cocktail-link:hover {
+    background-color: #d9a874;
+}
+
+.cre-body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:rgb(197, 184, 110);
+}
+
+/* Header Section */
+.cre-image-container {
+    width: 60%;
+    height: 80vh;
+    overflow: hidden;
+    position: relative;
+    margin-top: 30px;
+}
+
+.cre-header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Main Content */
+.cre-content {
+    text-align: right;
+    max-width: 500px;
+    margin: 0rem ;
+    padding: 0 1em;
+    position: static;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.cre-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4em; /* Adjust font size */
+    color: #fff; /* Text color */
+    margin-top: 30px; /* Reset margins */
+    padding: 0.5em 1em; /* Add padding inside the title box */
+    position: absolute; /* Use absolute positioning */
+    top: 10%; /* Position it higher on the screen (adjust as needed) */
+    right: 5%; /* Align it to the right side of the screen */
+    z-index: 2; /* Ensure it stays above other elements */
+    transition: all 0.3s ease;
+ }
+
+.cre-description {
+    font-size: 1.1em;
+    color: #fff;
+    text-align: left;
+    margin-top: 30px;
+    line-height: 1.6;
+    max-width: 500px;
+    top: 40%;
+    right: 5%;
+    z-index: 2;
+    padding: 0.5em 1em; /* Add padding inside the title box */
+    position: absolute; 
+    transition: all 0.3s ease;
+    /* margin-left: auto;
+    margin-right: auto; */
+} 
+
+.cre-title:hover {
+    color: #412b12; /* Change the color on hover */
+    transform: translateY(-10px); /* Slightly move the title upwards */
+}
+
+/* Hover effect for description */
+.cre-description:hover {
+    color: #412b12;/* Change the color on hover */
+    transform: translateY(-5px); /* Slightly move the description upwards */
+}
+
+
+/* Featured Cocktails Section */
+.cre-featured-cocktails {
+    background-color: #f2f2f2;
+    padding: 3em 2em;
+    text-align: center;
+}
+
+.cre-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    color: #e2c8ac;
+    margin-bottom: 1.5em;
+}
+
+.cre-cocktails {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 5em;
+    margin-top: 2em;
+}
+
+/* Cocktail Card Styles */
+.cre-cocktail-card {
+    background-color: #fdddb1;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+
+}
+
+.cre-cocktail-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+.cre-cocktail-text {
+    position: relative;
+    color: #333;
+}
+
+.cre-cocktail-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    color: #2d2d2d;
+}
+
+.cre-cocktail-card p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.cre-cocktail-link {
+    background-color: #e2c8ac;
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cre-cocktail-link:hover {
+    background-color: #d9a874;
+}
+
+/* Hover Effect */
+.cre-cocktail-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Cocktail Culture Section */
+.cre-cocktail-culture {
+    font-family: 'Poppins', sans-serif;
+    padding: 3em 2em;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.cre-culture-description {
+    font-size: 1.2em;
+    color: #444;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .cre-title {
+        font-size: 3.5em;
+    }
+
+    .cre-description {
+        font-size: 1em;
+    }
+
+    .cre-cocktails {
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+}
+
+
+/* Bar Header */
+.bar-header {
+    background-color: #3e3823db;
+    color: #FFCC80;
+    text-align: center;
+    padding: 20px;
+}
+
+.bar-header h1 {
+    font-size: 36px;
+    font-family: 'Arial', sans-serif;
+}
+
+.bar-header p {
+    font-size: 18px;
+    font-style: italic;
+}
+
+/* Bar Intro Section */
+.bar-intro {
+    background-color: chocolate;
+    text-align: center;
+    height: 100vh;
+    top: -4rem;
+    padding: 2em;
+    position: relative;
+}
+
+.bar-intro h2{
+    font-family: 'Caveat', sans-serif;
+}
+
+.history-slideshow {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.slide-caption {
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.image-slideshow {
+    position: relative;
+    width: 80%; /* Adjust width as needed */
+    height: 300px; /* Fixed height for the slideshow */
+    margin: 0 auto;
+    overflow: hidden; /* Ensures images don't overflow */
+}
+
+
+
+.image-slideshow img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes sure the images fit nicely */
+    opacity: 0; /* Start images hidden */
+    animation: slideshow 6s infinite;
+}
+
+.image-slideshow img:nth-child(2) {
+    animation-delay: 3s; /* Second image appears after the first */
+}
+
+.bar-description {
+    margin-top: 2em; /* Push text below the slideshow */
+    font-size: 1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Keyframes for image transitions */
+@keyframes slideshow {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Bar History Section */
+.bar-history {
+    padding: 20px;
+    background-color: #FFEB3B;
+    color: #3E2723;
+    text-align: center;
+}
+
+.bar-history h2 {
+    font-family: 'Caveat', sans-serif;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.bar-description {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Famous Bars Section */
+.bar-famous {
+    padding: 20px;
+    background-color: #FFF3E0;
+    color: #3E2723;
+    text-align: center;
+}
+
+.bar-famous h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-family: 'Caveat', sans-serif;
+}
+
+.bar-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .bar-table th, .bar-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .bar-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .bar-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .bar-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+
+/* Bar Footer */
+.bar-footer {
+    background-color: #3E2723;
+    color: #FFCC80;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.bar-footer p {
+    font-size: 14px;
+}
